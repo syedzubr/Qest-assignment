@@ -1,0 +1,38 @@
+<h3 class="m-3">User Table</h3>
+<div [formGroup]="filterForm" class="main-container">
+   <div class="form-input">
+        <input type="text" class="form-control" placeholder="Search by name..." formControlName="searchByName" />
+        <select formControlName="searchByCity" class="form-select">
+            <option value="">Select Option</option>
+            <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+        </select>
+        <select formControlName="searchByGender" class="form-select">
+            <option value="">Select Option</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+
+    <div class="table-columns table-header font">
+        <div>Name</div>
+        <div>Email</div>
+        <div>Mobile</div>
+        <div>Location</div>
+        <div>Age</div>
+        <div>Gender</div>
+    </div>
+    <ng-container *ngIf="filteredData.length > 0">
+        <div *ngFor="let person of filteredData" class="table-columns font font-table-items">
+            <div>{{person.firstname}} {{person.lastname}}</div>
+            <div>{{person.email}}</div>
+            <div>{{person.mobile}}</div>
+            <div>{{person.city}}</div>
+            <div>{{person.dateOfBirth | getAge}}</div>
+            <div>{{person.gender}}</div>
+        </div>
+    </ng-container>
+
+    <div *ngIf="filteredData.length == 0">
+        <h4 class="text-center m-3">No Data found !</h4>
+    </div>
+</div>

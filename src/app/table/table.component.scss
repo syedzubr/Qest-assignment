@@ -1,0 +1,41 @@
+.main-container {
+    margin: 10px;
+}
+
+.table-columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    min-width: 650px;
+}
+
+.table-columns:nth-of-type(2n) {
+    background-color: rgb(225, 225, 225);
+}
+
+.table-columns:nth-child(n) {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.table-columns:hover {
+    box-shadow: 0px 0px 2px grey;
+    cursor: pointer;
+}
+
+.font {
+    color: grey;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.font-table-items:nth-child(2n) {
+    color: rgb(14, 14, 56);
+}
+
+.form-input {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0px;
+}
