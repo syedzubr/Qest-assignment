@@ -1,0 +1,20 @@
+<h1> User orders table </h1>
+
+<div class="main-container" *ngFor="let person of dummyData; let i = index">
+    <div class="row-container" [ngStyle]="{'backgroundColor' : person.color}">
+        <div>{{person.name}}</div>
+        <div>{{person.age}}</div>
+        <div>{{person.location}}</div>
+        <button class="btns" (click)="toggleIsShown(i)"> Get orders </button>  
+    </div>
+    <div *ngIf="person.isShown" class="expandable">
+        <ng-container *ngTemplateOutlet="myTemplate; context: {name: person.name}"></ng-container>
+    </div>
+</div>
+
+
+<ng-template #myTemplate let-name="name">
+    <div class="expandable">
+        <p *ngFor="let item of mapData[name]; let i = index"> {{i+1}}. {{item}} </p>
+    </div>
+</ng-template>

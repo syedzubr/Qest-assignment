@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetAgePipe } from './get-age.pipe';
+import { UsersOrderTableComponent } from './users-order-table/users-order-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    GetAgePipe
+    GetAgePipe,
+    UsersOrderTableComponent
   ],
   imports: [
     BrowserModule,
